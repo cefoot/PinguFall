@@ -26,10 +26,26 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &77624250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8640218700664541025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354d30487128626499b9e74b4784c74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinProbabilityRange: 0.55
+  MaxProbabilityRange: 1
+  AdjacentsCount: 0
+  FallProbability: 0.09
 --- !u!1001 &345040179372971624
 PrefabInstance:
   m_ObjectHideFlags: 0
