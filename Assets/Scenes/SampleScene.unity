@@ -187,14 +187,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1 &77624249 stripped
@@ -358,13 +350,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336368966}
+  - component: {fileID: 336368967}
   m_Layer: 0
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &336368966
 Transform:
   m_ObjectHideFlags: 0
@@ -393,6 +386,21 @@ Transform:
   m_Father: {fileID: 597930563}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336368967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336368965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627aeeba3f7e97a45a5b9edde7b9ea8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Height: 10
+  Width: 10
+  SingleHexagonIceFloe: {fileID: 0}
 --- !u!4 &355842997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734234258231197042, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,
@@ -472,14 +480,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &476538507
@@ -548,10 +548,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -628,14 +624,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1 &597930562
@@ -667,6 +655,7 @@ Transform:
   m_Children:
   - {fileID: 905325287}
   - {fileID: 336368966}
+  - {fileID: 1097411387}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -772,14 +761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -953,14 +934,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &891654292
@@ -1029,10 +1002,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -1108,15 +1077,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270743421665813361, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -1215,6 +1175,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 569729992}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1097411386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097411387}
+  - component: {fileID: 1097411388}
+  m_Layer: 0
+  m_Name: ground (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097411387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097411386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 597930563}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097411388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097411386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627aeeba3f7e97a45a5b9edde7b9ea8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Height: 10
+  Width: 10
+  SingleHexagonIceFloe: {fileID: 4734234258231197042, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,
+    type: 3}
 --- !u!1001 &1142287093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1281,14 +1288,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -1359,14 +1358,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &1299163156
@@ -1435,10 +1426,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -1875,14 +1862,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!4 &1513694021 stripped
@@ -1958,14 +1937,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &1548022910
@@ -2034,14 +2005,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -2117,14 +2080,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -2254,10 +2209,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &1899317437
@@ -2326,14 +2277,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
@@ -2560,10 +2503,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
 --- !u!1001 &345040179210799658
@@ -2632,10 +2571,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 77624250, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}
-      propertyPath: FallProbability
-      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91, type: 3}

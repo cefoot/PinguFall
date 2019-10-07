@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
+
     private const float MIN_DROP_DISTANCE = 0.1F;
-    private Dictionary<Transform, Vector3> _adjacents = new Dictionary<Transform, Vector3>();
-    private System.Random _myRand = new System.Random();
+    private readonly Dictionary<Transform, Vector3> _adjacents = new Dictionary<Transform, Vector3>();
     private Transform[] _orderedAdjacents;
     private Rigidbody _myRigid;
 
@@ -17,9 +17,16 @@ public class PlatformManager : MonoBehaviour
     public int AdjacentsCount = 6;
     [Range(0f, 1f)]
     public float FallProbability = 0.08F;
+    public float LastProbability = 1F;
 
     private void OnEnable()
     {
+        InitAdjacents();
+    }
+
+    public void InitAdjacents()
+    {
+        _adjacents.Clear();
         _myRigid = GetComponent<Rigidbody>();
         var myCollider = GetComponentInChildren<Collider>();
         var hits = Physics.SphereCastAll(new Ray(myCollider.bounds.center + (Vector3.down * myCollider.bounds.extents.y * 2F), Vector3.up), myCollider.bounds.extents.magnitude * 1.1F, 2F);
@@ -85,21 +92,21 @@ public class PlatformManager : MonoBehaviour
             }
         }
         var probs = new List<float>();
-        var prob = 1F;
+        LastProbability = 1F;
         for (var i = 0; i < tries; i++)
         {
             var v = UnityEngine.Random.Range(MinProbabilityRange, MaxProbabilityRange);
             probs.Add(v);
-            prob *= v;
+            LastProbability *= v;
         }
-        if (prob < FallProbability)
+        if (LastProbability < FallProbability)
         {
-            Debug.Log($"{name}: falling ([{probs.Count}]{String.Concat(probs.ToArray())}:\r\n{prob})");
+            Debug.Log($"{name}: falling ([{probs.Count}]{String.Concat(probs.ToArray())}:\r\n{LastProbability})", this);
             Drop();
         }
-        else
-        {
-            Debug.Log($"{name}: NOT falling ([{probs.Count}]{String.Concat(probs.ToArray())}:\r\n{prob})");
-        }
+        //else
+        //{
+        //    Debug.Log($"{name}: NOT falling ([{probs.Count}]{String.Concat(probs.ToArray())}:\r\n{prob})");
+        //}
     }
 }
