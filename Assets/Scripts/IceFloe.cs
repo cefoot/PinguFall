@@ -16,13 +16,17 @@ public class IceFloe : MonoBehaviour
     private void OnEnable()
     {
         var parent = transform;
-        for (var x = 0; x < Width; x++)
+        var minX = Width / -2;
+        var maxX = Width / 2;
+        var minY = Height / -2;
+        var maxY = Height / 2;
+        for (var x = minX; x < maxX; x++)
         {
-            for (var y = 0; y < Height; y++)
+            for (var y = minY; y < maxY; y++)
             {
-                var current = Instantiate(SingleHexagonIceFloe, CalcPos(x, y), Quaternion.identity, parent);
+                var current = Instantiate(SingleHexagonIceFloe, parent.position + CalcPos(x, y), Quaternion.identity, parent);
                 current.name = $"[{x}:{y}]IceFloe";
-                if (x == 0 || x == Width - 1 || y == 0 || y == Height - 1)
+                if (x == minX || x == maxX - 1 || y == minY || y == maxY - 1)
                 {
                     Destroy(current.GetComponent<PlatformManager>());
                     var bdy = current.GetComponent<Rigidbody>();

@@ -8,9 +8,10 @@ public class PlatformManager : MonoBehaviour
 {
 
     private const float MIN_DROP_DISTANCE = 0.1F;
-    private readonly Dictionary<Transform, Vector3> _adjacents = new Dictionary<Transform, Vector3>();
-    private Transform[] _orderedAdjacents;
+    private Dictionary<Transform, Vector3> _adjacents = new Dictionary<Transform, Vector3>();
+    public Transform[] _orderedAdjacents;
     private Rigidbody _myRigid;
+    public event EventHandler Falling;
 
     public float MinProbabilityRange = 0.55F;
     public float MaxProbabilityRange = 1F;
@@ -29,7 +30,7 @@ public class PlatformManager : MonoBehaviour
         _adjacents.Clear();
         _myRigid = GetComponent<Rigidbody>();
         var myCollider = GetComponentInChildren<Collider>();
-        var hits = Physics.SphereCastAll(new Ray(myCollider.bounds.center + (Vector3.down * myCollider.bounds.extents.y * 2F), Vector3.up), myCollider.bounds.extents.magnitude * 1.1F, 2F);
+        var hits = Physics.SphereCastAll(new Ray(myCollider.bounds.center + (Vector3.down * myCollider.bounds.extents.y * 2F), Vector3.up), myCollider.bounds.extents.magnitude * 1.1F, 0F);
         foreach (var item in hits)
         {
             if (item.collider == myCollider) continue;
@@ -69,6 +70,7 @@ public class PlatformManager : MonoBehaviour
         _myRigid.useGravity = true;
         enabled = false;
         _myRigid.isKinematic = false;
+        Falling?.Invoke(this, new EventArgs());
     }
 
 

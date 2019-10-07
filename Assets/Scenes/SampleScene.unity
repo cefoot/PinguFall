@@ -1218,8 +1218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627aeeba3f7e97a45a5b9edde7b9ea8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 10
-  Width: 10
+  Height: 11
+  Width: 11
   SingleHexagonIceFloe: {fileID: 4734234258231197042, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,
     type: 3}
 --- !u!1001 &1142287093
@@ -2123,19 +2123,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1813339217
-BoxCollider:
+--- !u!114 &1813339216
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813339214}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.34141523, y: 0.713109, z: 0.44378328}
-  m_Center: {x: 0.0133239925, y: 0.3483677, z: 0.014637232}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1864be7a7012d43aa7c5cd2e29590a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveFloe: {fileID: 0}
 --- !u!4 &1829908585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734234258231197042, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,
