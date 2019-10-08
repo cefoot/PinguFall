@@ -38,14 +38,14 @@ public class PlatformManager : MonoBehaviour
             {
                 continue;
             }
-            _adjacents[item.transform] = item.transform.position;
+            _adjacents[item.transform] = item.transform.localPosition;
         }
         UpdateAdjacents();
     }
 
     private void UpdateAdjacents()
     {
-        var myPos = transform.position;
+        var myPos = transform.localPosition;
         OrderedAdjacents = _adjacents.OrderBy(entry => Vector3.SignedAngle(entry.Value - myPos, Vector3.forward, Vector3.up)).Select(entry => entry.Key).ToArray();
         AdjacentsCount = _adjacents.Count;
     }
@@ -55,7 +55,7 @@ public class PlatformManager : MonoBehaviour
     {
         if (_myRigid.useGravity) Drop();
         var dropped = (from adj in _adjacents
-                       where adj.Key && Vector3.Distance(adj.Key.position, adj.Value) > MIN_DROP_DISTANCE
+                       where adj.Key && Vector3.Distance(adj.Key.localPosition, adj.Value) > MIN_DROP_DISTANCE
                        select adj.Key).ToList();
         var newDropped = false;
         foreach (var item in dropped)
