@@ -27,6 +27,7 @@ public class PenguinWalk : MonoBehaviour
         var target = Random.Range(0, neighbours.Length + 5);
         if (target >= neighbours.Length) return;//stay here
         //play animation
+        if (!neighbours[target].GetComponent<PlatformManager>()) return;//don't walk on border
         _target = new Vector3(neighbours[target].position.x, transform.position.y, neighbours[target].position.z);
         _animator.SetLayerWeight(2, 1F);
     }
