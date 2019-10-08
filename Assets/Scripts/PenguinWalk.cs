@@ -26,9 +26,9 @@ public class PenguinWalk : MonoBehaviour
         var neighbours = _platform.ActiveFloe.OrderedAdjacents;
         var target = Random.Range(0, neighbours.Length + 5);
         if (target >= neighbours.Length) return;//stay here
-        //play animation
-        if (!neighbours[target].GetComponent<PlatformManager>()) return;//don't walk on border
+        if (!neighbours[target] || !neighbours[target].GetComponent<PlatformManager>()) return;//don't walk on border or on removed tile
         _target = new Vector3(neighbours[target].position.x, transform.position.y, neighbours[target].position.z);
+        //play animation
         _animator.SetLayerWeight(2, 1F);
     }
 
