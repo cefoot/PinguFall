@@ -22,5 +22,6 @@ public class ActivePlattform : MonoBehaviour
     private void ActiveFloe_Falling(object sender, System.EventArgs e)
     {
         GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<PenguinWalk>().enabled = false;
     }
 }

@@ -40,6 +40,11 @@ public class PlatformManager : MonoBehaviour
             }
             _adjacents[item.transform] = item.transform.position;
         }
+        UpdateAdjacents();
+    }
+
+    private void UpdateAdjacents()
+    {
         var myPos = transform.position;
         OrderedAdjacents = _adjacents.OrderBy(entry => Vector3.SignedAngle(entry.Value - myPos, Vector3.forward, Vector3.up)).Select(entry => entry.Key).ToArray();
         AdjacentsCount = _adjacents.Count;
@@ -60,7 +65,7 @@ public class PlatformManager : MonoBehaviour
         }
         if (newDropped)
         {
-            AdjacentsCount = _adjacents.Count;
+            UpdateAdjacents();
             ShouldFall();
         }
     }
@@ -71,8 +76,13 @@ public class PlatformManager : MonoBehaviour
         enabled = false;
         _myRigid.isKinematic = false;
         Falling?.Invoke(this, new EventArgs());
+        Invoke("Erase", 2F);
     }
 
+    public void Erase()
+    {
+        Destroy(gameObject);
+    }
 
     private void ShouldFall()
     {
