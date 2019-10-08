@@ -2226,6 +2226,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveFloe: {fileID: 0}
+--- !u!114 &1813339217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813339214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0df3a365e1a0c4995150b7b26a547f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1829908585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734234258231197042, guid: 67c5a2a5ef6bf334fa0ba2292bc68b91,

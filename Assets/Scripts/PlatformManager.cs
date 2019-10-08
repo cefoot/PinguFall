@@ -9,7 +9,7 @@ public class PlatformManager : MonoBehaviour
 
     private const float MIN_DROP_DISTANCE = 0.1F;
     private Dictionary<Transform, Vector3> _adjacents = new Dictionary<Transform, Vector3>();
-    public Transform[] _orderedAdjacents;
+    public Transform[] OrderedAdjacents;
     private Rigidbody _myRigid;
     public event EventHandler Falling;
 
@@ -41,7 +41,7 @@ public class PlatformManager : MonoBehaviour
             _adjacents[item.transform] = item.transform.position;
         }
         var myPos = transform.position;
-        _orderedAdjacents = _adjacents.OrderBy(entry => Vector3.SignedAngle(entry.Value - myPos, Vector3.forward, Vector3.up)).Select(entry => entry.Key).ToArray();
+        OrderedAdjacents = _adjacents.OrderBy(entry => Vector3.SignedAngle(entry.Value - myPos, Vector3.forward, Vector3.up)).Select(entry => entry.Key).ToArray();
         AdjacentsCount = _adjacents.Count;
     }
 
@@ -80,7 +80,7 @@ public class PlatformManager : MonoBehaviour
         for (var i = 0; i < 3; i++)
         {
             //two on opposite 
-            if (_orderedAdjacents.Length > i + 3 && _adjacents.ContainsKey(_orderedAdjacents[i]) && _adjacents.ContainsKey(_orderedAdjacents[i + 3]))
+            if (OrderedAdjacents.Length > i + 3 && _adjacents.ContainsKey(OrderedAdjacents[i]) && _adjacents.ContainsKey(OrderedAdjacents[i + 3]))
             {
                 tries -= 2;
             }
@@ -88,7 +88,7 @@ public class PlatformManager : MonoBehaviour
         for (var i = 0; i < 2; i++)
         {
             //three in triangle 
-            if (_orderedAdjacents.Length > i + 4 && _adjacents.ContainsKey(_orderedAdjacents[i]) && _adjacents.ContainsKey(_orderedAdjacents[i + 2]) && _adjacents.ContainsKey(_orderedAdjacents[i + 4]))
+            if (OrderedAdjacents.Length > i + 4 && _adjacents.ContainsKey(OrderedAdjacents[i]) && _adjacents.ContainsKey(OrderedAdjacents[i + 2]) && _adjacents.ContainsKey(OrderedAdjacents[i + 4]))
             {
                 tries -= 2;
             }
