@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PenguinWalk : MonoBehaviour
 {
-    private ActivePlattform _platform;
+    private PenguController _platform;
     private Vector3? _target = null;
     private Animator _animator;
     private Transform _transform;
@@ -14,7 +14,7 @@ public class PenguinWalk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _platform = GetComponent<ActivePlattform>();
+        _platform = GetComponent<PenguController>();
         _animator = GetComponent<Animator>();
         _transform = GetComponent<Transform>();
         InvokeRepeating("Walk", 3f, 3f);
@@ -30,6 +30,12 @@ public class PenguinWalk : MonoBehaviour
         _target = new Vector3(neighbours[target].position.x, transform.position.y, neighbours[target].position.z);
         //play animation
         _animator.SetLayerWeight(2, 1F);
+    }
+
+    public void Reset()
+    {
+        _target = null;
+        _animator.SetLayerWeight(2, 0F);
     }
 
     private void Update()

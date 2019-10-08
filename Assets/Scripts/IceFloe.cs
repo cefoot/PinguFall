@@ -42,15 +42,21 @@ public class IceFloe : MonoBehaviour
         return new Vector3(x * OFFSET_X, 0F, y * OFFSET_Y + (x % 2) * ADDITIONAL_OFFSET_Y);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Reset()
     {
-
+        StartCoroutine(ResetProcess());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ResetProcess()
     {
-
+        foreach (Transform trans in transform)
+        {
+            Destroy(trans.gameObject);
+        }
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        OnEnable();
     }
+
 }
